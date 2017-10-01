@@ -1,0 +1,23 @@
+version: '2'
+services:
+    service-one:
+        container_name: service-one
+        build:
+            context: ../service-one
+            dockerfile: Dockerfile
+        image: service-one:latest
+        expose:
+            - 9001
+        ports:
+            - 9001:9001
+
+    service-two:
+        container_name: service-two
+        build:
+            context: ../service-two
+            dockerfile: Dockerfile
+        image: service-two:latest
+        expose:
+            - 9002
+        ports:
+            - 9002:9002
