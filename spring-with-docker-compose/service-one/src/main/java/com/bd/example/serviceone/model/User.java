@@ -1,10 +1,22 @@
 package com.bd.example.serviceone.model;
 
-public class User {
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
+
+public class User implements Serializable {
+    @NotNull
     private String firstName;
+
+    @NotNull
     private String lastName;
+
+    @NotNull
     private String email;
     private String password;
+
+    @NotNull
+    @Min(value = 1)
     private Integer contactNumber;
 
     public User() {
@@ -32,6 +44,10 @@ public class User {
 
     public String getPassword() {
         return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public Integer getContactNumber() {
